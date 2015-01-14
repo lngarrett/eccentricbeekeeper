@@ -1,0 +1,138 @@
+<HTML>
+<HEAD>
+
+<script language=JavaScript>var isCtrl = false;
+document.onkeyup=function(e)
+{
+if(e.which == 17)
+isCtrl=false;
+}
+document.onkeydown=function(e)
+{
+if(e.which == 17)
+isCtrl=true;
+if((e.which == 85) || (e.which == 67) && isCtrl == true)
+{
+// alert(‘Keyboard shortcuts are cool!’);
+return false;
+}
+}
+</script>
+
+   <TITLE>eccentric beekeeper</TITLE>
+<link rel="shortcut icon" href="/favicon.ico" />
+
+</HEAD>
+
+<script language="JavaScript">
+
+<!--
+
+        hexa = new Array(16);
+        for(var i = 0; i < 10; i++)
+                hexa[i] = i;
+        hexa[10]="a"; hexa[11]="b"; hexa[12]="c";
+        hexa[13]="d"; hexa[14]="e"; hexa[15]="f";
+
+        function hex(i) 
+        {
+                if (i < 0)
+                        return "00";
+                else if (i > 255)
+                        return "ff";
+                else
+                        return "" + hexa[Math.floor(i/16)] + hexa[i%16];
+        }
+
+        function setbgColor(r, g, b) 
+        {
+                document.bgColor = "#"+hex(r)+hex(g)+hex(b);
+        }
+        
+        // 1 -- white --> black
+        // -1 -- black --> white
+        var inc = 1;
+        var cur_i = 20;
+        var max_step = 20;
+        var in_progress = false;
+        
+        function msover()
+        {
+                inc = -1;
+                if( !in_progress )
+                        step();
+        }
+
+        function msout()
+        {
+                inc = 1;
+                if( !in_progress )
+                        step();
+        }
+        
+        function step()
+        {		
+        	//	alert(document.bgColor);
+                setbgColor( Math.floor(255 * cur_i / max_step),
+                                Math.floor(255 * cur_i / max_step),
+                                Math.floor(255 * cur_i /max_step) );
+           //    alert("2:" + document.bgColor);
+                cur_i += inc;
+                if( (inc > 0 && cur_i > max_step) || (inc < 0 && cur_i < 0) )
+                {
+                        cur_i -= inc;
+                        inc = -inc;
+                        in_progress = false;
+                }
+                else
+                {
+                        in_progress = true;
+                        setTimeout("step()", 3);
+                }
+        }
+        
+// -->
+
+</script>
+
+
+
+
+</head>
+
+
+<BODY TEXT="black" LINK="#1b1b1b" VLINK="#1b1b1b" ALINK="#1b1b1b" bgcolor="black"> 
+<TABLE BORDER=0 WIDTH="100%" HEIGHT="100%">
+   <TR>
+      <TD>
+         <P ALIGN=CENTER><a href="http://www.eccentricbeekeeper.com/honey/about.html" onMouseOver="msover()" 
+        onMouseOut="msout()"><IMG SRC="logo.png" border=0></A>
+        <br>
+                <br>
+                        <br>
+                
+
+<FONT SIZE="-3" FACE="Arial">eccentric beekeeper<BR><i> per me caeci vident</i></FONT>
+      </TD></TR>
+</TABLE>
+
+
+
+<script type="text/javascript">
+var sc_project=8692110; 
+var sc_invisible=1; 
+var sc_security="21e913f1"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="web stats"
+href="http://statcounter.com/free-web-stats/"
+target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/8692110/0/21e913f1/1/"
+alt="web stats"></a></div></noscript>
+
+
+</HTML>
